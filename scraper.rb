@@ -6,7 +6,7 @@ require 'scraperwiki'
 require 'wikidata/area'
 require 'wikidata/fetcher'
 
-query = 'SELECT DISTINCT ?item WHERE { ?item wdt:P31 wd:Q44710774 }'
+query = 'SELECT DISTINCT ?item WHERE { ?item wdt:P31/wdt:P279* wd:Q6970524 }'
 wanted = EveryPolitician::Wikidata.sparql(query)
 raise 'No ids' if wanted.empty?
 
